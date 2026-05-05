@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AgroSuivi - Tableau de bord</title>
+
+    
+</head>
+<body>
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+        <div class="logo">🌱 AgroSuivi</div>
+        <ul class="menu">
+            <li class="actif"><a href="index.html">Dashboard</a></li>
+            <li><a href="parcelles.html">Parcelles</a></li>
+            <li><a href="observations.html">Observations</a></li>
+            <li><a href="alertes.html">Alertes</a></li>
+        </ul>
+    </aside>
+
+
+    <!-- CONTENU -->
+    <main class="contenu">
+
+        <h1>Tableau de bord</h1>
+
+
+        <!-- GRILLE BENTO -->
+        <div class="bento">
+
+            <!-- Grande boîte parcelles -->
+            <div class="boite grande">
+                <span class="label">Parcelles</span>
+                <div>
+                    <div class="chiffre">10</div>
+                    <p class="info">Sur 5 zones différentes</p>
+                </div>
+            </div>
+
+            <!-- Météo (lime) -->
+            <div class="boite lime">
+                <span class="label">Météo</span>
+                <div class="chiffre">22°</div>
+                <span class="info">Ensoleillé</span>
+            </div>
+
+            <!-- Alertes (orange) -->
+            <div class="boite orange">
+                <span class="label">Alertes</span>
+                <div class="chiffre">3</div>
+                <span class="info">À surveiller</span>
+            </div>
+
+            <!-- Observations -->
+            <div class="boite">
+                <span class="label">Observations</span>
+                <div class="chiffre">24</div>
+                <span class="info">Cette semaine</span>
+            </div>
+
+            <!-- Risque -->
+            <div class="boite">
+                <span class="label">Risque</span>
+                <div class="chiffre">2</div>
+                <span class="info">Action requise</span>
+            </div>
+
+        </div>
+
+
+        <!-- DERNIÈRES ALERTES -->
+        <div class="alertes-bloc">
+            <h2>Dernières alertes</h2>
+
+            <div class="alerte rouge">
+                Maladie détectée — Parcelle Nord-Ouest
+            </div>
+
+            <div class="alerte orange">
+                Risque maladie — Parcelle Centre
+            </div>
+
+            <div class="alerte bleu">
+                Stress hydrique — Parcelle Sud
+            </div>
+        </div>
+
+    </main>
+    
+
+</body>
+</html>
