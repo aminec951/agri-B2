@@ -34,17 +34,24 @@ exploiter des données (météo, observations terrain) et améliorer leur prise 
 ---
 
 ## 📁 Structure du projet
-agri-B2/
-├── app/
-│   ├── routes/          # Routes Flask (parcelles, météo, alertes)
-│   ├── models/          # Modèles BDD
-│   ├── templates/       # Pages HTML
-│   └── static/          # CSS, JS, images
-├── database/
-│   └── schema.sql       # Script création tables
-├── docs/                # Schémas d'architecture
-├── requirements.txt     # Dépendances Python
-└── README.md
+agri-app/
+├── app.py
+├── db.py
+├── routes/
+│   ├── parcelles.py
+│   ├── meteo.py
+│   ├── alertes.py
+│   └── observations.py
+├── templates/          ← fichiers HTML (Hamza travaille ici)
+│   ├── index.html      ← tableau de bord
+│   ├── parcelles.html  ← liste des parcelles
+│   └── observations.html
+└── static/             ← fichiers CSS et JS (Hamza travaille ici)
+    ├── css/
+    │   └── style.css
+    └── js/
+        ├── dashboard.js
+        └── parcelles.js
 ---
 
 ## ⚙️ Installation
