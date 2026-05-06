@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AgroSuivi – Observations</title>
+    <link rel="stylesheet" href="../static/css/style.css">
+</head>
+<body>
+
+    <div class="sidebar">
+        <div class="logo">🌱 AgroSuivi</div>
+        <ul class="menu">
+            <li><a href="index.html">Dashboard</a></li>
+            <li><a href="parcelles.html">Parcelles</a></li>
+            <li class="actif"><a href="observations.html">Observations</a></li>
+            <li><a href="alertes.html">Alertes</a></li>
+        </ul>
+    </div>
+
+    <div class="contenu">
+        <h1>Observations</h1>
+
+        <div class="grille">
+
+            <div class="carte">
+                <h2>Nouvelle observation</h2>
+
+                <div class="champ">
+                    <label>Parcelle</label>
+                    <select id="champ-parcelle">
+                        <option value="">Choisir une parcelle...</option>
+                    </select>
+                </div>
+
+                <div class="champ">
+                    <label>Date</label>
+                    <input type="date" id="champ-date">
+                </div>
+
+                <div class="champ">
+                    <label>État de la culture</label>
+                    <div class="etats">
+                        <button class="btn-etat actif" onclick="choisirEtat(this, 'Normal')">✅ Normal</button>
+                        <button class="btn-etat" onclick="choisirEtat(this, 'Stress hydrique')">💧 Stress hydrique</button>
+                        <button class="btn-etat" onclick="choisirEtat(this, 'Maladie détectée')">🦠 Maladie</button>
+                        <button class="btn-etat" onclick="choisirEtat(this, 'Autre')">📋 Autre</button>
+                    </div>
+                </div>
+
+                <div class="champ">
+                    <label>Commentaire</label>
+                    <textarea id="champ-commentaire" placeholder="Décrivez ce que vous avez observé..."></textarea>
+                </div>
+
+                <button class="btn-envoyer" onclick="envoyerObservation()">Enregistrer</button>
+                <div class="msg-succes" id="message-succes">✅ Observation enregistrée !</div>
+            </div>
+
+            <div class="carte">
+                <div class="historique-header">
+                    <h2>Historique</h2>
+                    <select class="filtre" id="filtre-parcelle" onchange="filtrer()">
+                        <option value="">Toutes les parcelles</option>
+                    </select>
+                </div>
+                <div id="liste-observations">
+                    <p style="color:#888; font-size:13px;">Chargement...</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="../static/js/observations.js"></script>
+</body>
+</html>
