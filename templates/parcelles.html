@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AgroSuivi - Parcelles</title>
+
+    <link rel="stylesheet" href="../static/css/style.css">
+</head>
+<body>
+
+    <aside class="sidebar">
+        <div class="logo">🌱 AgroSuivi</div>
+        <ul class="menu">
+            <li><a href="index.html">Dashboard</a></li>
+            <li class="actif"><a href="parcelles.html">Parcelles</a></li>
+            <li><a href="observations.html">Observations</a></li>
+            <li><a href="alertes.html">Alertes</a></li>
+        </ul>
+    </aside>
+
+
+    <main class="contenu">
+
+        <!-- Titre + bouton -->
+        <div class="header-page">
+            <h1>Parcelles</h1>
+            <button class="btn-ajouter">+ Nouvelle parcelle</button>
+        </div>
+
+        <!-- Filtres -->
+        <div class="filtres">
+            <span class="filtre actif">Toutes</span>
+            <span class="filtre">OK</span>
+            <span class="filtre">À risque</span>
+            <span class="filtre">Maladie</span>
+        </div>
+
+        <!-- Grille de cartes (vide, remplie par JS) -->
+        <div class="grille-parcelles" id="grille-parcelles">
+            <!-- les cartes seront ajoutées ici par le JS -->
+        </div>
+
+    </main>
+
+    <script src="../static/js/parcelles.js"></script>
+
+</body>
+</html>
