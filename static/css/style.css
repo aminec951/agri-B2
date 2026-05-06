@@ -188,6 +188,170 @@ h1 {
     }
 }
 
+/* ============================================
+   PAGE Observations
+   ============================================ */
+
+/* --- GRILLE 2 COLONNES OBSERVATIONS --- */
+.grille {
+    display: grid;
+    grid-template-columns: 1fr 1.4fr;
+    gap: 15px;
+}
+
+.carte {
+    background-color: #1A211D;
+    border-radius: 16px;
+    padding: 20px;
+}
+
+/* --- FORMULAIRE --- */
+.champ {
+    margin-bottom: 14px;
+}
+
+.champ label {
+    display: block;
+    font-size: 12px;
+    text-transform: uppercase;
+    color: #888;
+    margin-bottom: 6px;
+}
+
+.champ select,
+.champ input,
+.champ textarea {
+    width: 100%;
+    background-color: #0F1410;
+    border: 1px solid #2A3A30;
+    border-radius: 8px;
+    padding: 10px 12px;
+    color: #E8E5DD;
+    font-size: 14px;
+    font-family: Arial, sans-serif;
+    outline: none;
+}
+
+.champ textarea {
+    height: 80px;
+    resize: none;
+}
+
+/* --- BOUTONS ETAT --- */
+.etats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6px;
+}
+
+.btn-etat {
+    background-color: #0F1410;
+    border: 1px solid #2A3A30;
+    border-radius: 8px;
+    padding: 8px;
+    color: #888;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.btn-etat.actif {
+    background-color: #1E3A10;
+    border-color: #C5F558;
+    color: #C5F558;
+    font-weight: bold;
+}
+
+/* --- BOUTON ENVOYER --- */
+.btn-envoyer {
+    width: 100%;
+    background-color: #C5F558;
+    color: #0F1410;
+    border: none;
+    border-radius: 8px;
+    padding: 12px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 6px;
+}
+
+/* --- MESSAGE SUCCES --- */
+.msg-succes {
+    display: none;
+    background-color: #1E3A10;
+    border: 1px solid #C5F558;
+    border-radius: 8px;
+    padding: 10px;
+    text-align: center;
+    color: #C5F558;
+    font-size: 13px;
+    margin-top: 10px;
+}
+
+/* --- HISTORIQUE --- */
+.historique-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.filtre {
+    background-color: #0F1410;
+    border: 1px solid #2A3A30;
+    border-radius: 8px;
+    padding: 6px 10px;
+    color: #E8E5DD;
+    font-size: 12px;
+    outline: none;
+}
+
+/* --- UNE OBSERVATION --- */
+.obs {
+    display: flex;
+    gap: 12px;
+    padding-bottom: 14px;
+    border-bottom: 1px solid #1E2820;
+    margin-bottom: 14px;
+}
+
+.obs:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+.point {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    margin-top: 5px;
+    flex-shrink: 0;
+}
+
+.point-vert   { background-color: #C5F558; }
+.point-orange { background-color: #F5A65B; }
+.point-rouge  { background-color: #E04545; }
+.point-bleu   { background-color: #5BAFF5; }
+
+.obs-info { flex: 1; }
+
+.obs-ligne1 {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 3px;
+}
+
+.obs-etat { font-size: 13px; font-weight: bold; }
+.obs-date { font-size: 11px; color: #888; }
+.obs-parcelle { font-size: 12px; color: #C5F558; margin-bottom: 3px; }
+.obs-commentaire { font-size: 12px; color: #888; }
+
+/* --- RESPONSIVE --- */
+@media (max-width: 768px) {
+    .grille { grid-template-columns: 1fr; }
+}
+
+
 
 /* =============
    PAGE PARCELLES 
