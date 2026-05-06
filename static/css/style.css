@@ -485,3 +485,43 @@ h1 {
         grid-template-columns: 1fr;
     }
 }     
+
+
+/* =============
+   PAGE ALERTES 
+   =============*/
+
+/* 3 KPI par niveau */
+.kpi-alertes {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.kpi-alerte {
+    background-color: #1A211D;
+    border-radius: 16px;
+    padding: 20px;
+    border-left: 4px solid #C5F558;
+}
+
+.kpi-alerte.rouge { border-left-color: #E04545; }
+.kpi-alerte.orange { border-left-color: #F5A65B; }
+.kpi-alerte.bleu { border-left-color: #5BAFF5; }
+
+
+/* Date à droite dans la liste d'alertes */
+.alerte-date {
+    float: right;
+    font-size: 12px;
+    opacity: 0.7;
+}
+
+
+/* Responsive alertes */
+@media (max-width: 768px) {
+    .kpi-alertes {
+        grid-template-columns: 1fr;
+    }
+}
