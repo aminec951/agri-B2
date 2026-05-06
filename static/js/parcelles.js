@@ -1,4 +1,4 @@
-// L'adresse du backend de Moha
+
 const URL_BACKEND = "http://10.105.2.47:5000";
 
 

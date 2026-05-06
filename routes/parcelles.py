@@ -1,4 +1,4 @@
-from flask import Blueprint, jsonify
+from flask import Blueprint, jsonify, request
 from db import get_db
 
 parcelles_bp = Blueprint("parcelles", __name__)
@@ -14,3 +14,4 @@ def get_parcelles():
     """)
     parcelles = cursor.fetchall()
     return jsonify(parcelles)
+
