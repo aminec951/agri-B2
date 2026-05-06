@@ -1,0 +1,189 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #0F1410;
+    color: #E8E5DD;
+    display: flex;
+    min-height: 100vh;
+    padding: 20px;
+    gap: 20px;
+}
+
+
+
+.sidebar {
+    width: 180px;
+    background-color: #1A211D;
+    border-radius: 16px;
+    padding: 20px;
+}
+
+.logo {
+    font-size: 18px;
+    font-weight: bold;
+    color: #C5F558;
+    margin-bottom: 30px;
+}
+
+.menu {
+    list-style: none;
+}
+
+.menu li {
+    padding: 10px 12px;
+    margin-bottom: 5px;
+    border-radius: 8px;
+    color: #888;
+    cursor: pointer;
+}
+
+.menu li.actif {
+    background-color: #C5F558;
+    color: #0F1410;
+    font-weight: bold;
+}
+
+.menu li a {
+    color: inherit;
+    text-decoration: none;
+    display: block;
+}
+
+
+
+.contenu {
+    flex: 1;
+}
+
+h1 {
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+
+
+.bento {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.boite {
+    background-color: #1A211D;
+    border-radius: 16px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 130px;
+}
+
+.grande {
+    grid-row: span 2;
+}
+
+.lime {
+    background-color: #C5F558;
+    color: #0F1410;
+}
+
+.orange {
+    background-color: #F5A65B;
+    color: #2A1605;
+}
+
+.label {
+    font-size: 12px;
+    text-transform: uppercase;
+    opacity: 0.6;
+}
+
+.chiffre {
+    font-size: 50px;
+    font-weight: bold;
+    line-height: 1;
+}
+
+.grande .chiffre {
+    font-size: 80px;
+}
+
+.info {
+    font-size: 13px;
+    opacity: 0.7;
+}
+
+
+.alertes-bloc {
+    background-color: #1A211D;
+    border-radius: 16px;
+    padding: 20px;
+}
+
+.alertes-bloc h2 {
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+.alerte {
+    padding: 12px;
+    border-radius: 8px;
+    margin-bottom: 8px;
+    font-size: 14px;
+}
+
+.alerte.rouge {
+    background-color: #2D1414;
+    border-left: 3px solid #E04545;
+}
+
+.alerte.orange {
+    background-color: #2D2014;
+    border-left: 3px solid #F5A65B;
+}
+
+.alerte.bleu {
+    background-color: #14222D;
+    border-left: 3px solid #5BAFF5;
+}
+
+
+/* ============================================
+   RESPONSIVE - Mobile (max 768px)
+   ============================================ */
+@media (max-width: 768px) {
+
+    body {
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    .sidebar {
+        width: 100%;
+    }
+
+    .menu {
+        display: flex;
+        gap: 5px;
+        flex-wrap: wrap;
+    }
+
+    .bento {
+        grid-template-columns: 1fr;
+    }
+
+    .grande {
+        grid-row: span 1;
+    }
+
+    .grande .chiffre {
+        font-size: 50px;
+    }
+}
