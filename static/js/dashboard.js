@@ -23,6 +23,12 @@ fetch(URL_BACKEND + "/api/dashboard", { headers: { "ngrok-skip-browser-warning":
         // Nombre d'observations
         document.getElementById("nb-observations").textContent = data.observations.length;
 
+        // Nombre de parcelles à risque (alertes niveau >= 2)
+        const parcellesRisque = new Set(
+            data.alertes.filter(a => a.niveau >= 2).map(a => a.parcelle_id)
+        );
+        document.getElementById("nb-risque").textContent = parcellesRisque.size;
+
 
         // 2) AFFICHER LES DERNIÈRES ALERTES
         const listeAlertes = document.getElementById("liste-alertes");
@@ -57,18 +63,3 @@ fetch(URL_BACKEND + "/api/dashboard", { headers: { "ngrok-skip-browser-warning":
 
 
 
-// 3) NOMBRE DE PARCELLES À RISQUE
-fetch(URL_BACKEND + "/api/parcelles", { headers: { "ngrok-skip-browser-warning": "true" } })
-    .then(reponse => reponse.json())
-    .then(parcelles => {
-
-        // On compte combien de parcelles ne sont pas "OK"
-        let nbRisque = 0;
-        parcelles.forEach(p => {
-            if (p.etat && p.etat !== "OK") {
-                nbRisque++;
-            }
-        });
-
-        document.getElementById("nb-risque").textContent = nbRisque;
-    });
