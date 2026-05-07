@@ -12,9 +12,10 @@ fetch(URL_BACKEND + "/api/alertes", { headers: { "ngrok-skip-browser-warning": "
         let nb1 = 0, nb2 = 0, nb3 = 0;
 
         alertes.forEach(a => {
-            if (a.niveau === 1) nb1++;
-            else if (a.niveau === 2) nb2++;
-            else if (a.niveau === 3) nb3++;
+            const niveau = parseInt(a.niveau);
+            if (niveau === 1) nb1++;
+            else if (niveau === 2) nb2++;
+            else if (niveau === 3) nb3++;
         });
 
         // Mettre à jour les KPI
@@ -30,8 +31,8 @@ fetch(URL_BACKEND + "/api/alertes", { headers: { "ngrok-skip-browser-warning": "
 
             // Choisir la couleur selon le niveau
             let couleur;
-            if (alerte.niveau === 3) couleur = "rouge";
-            else if (alerte.niveau === 2) couleur = "orange";
+            if (parseInt(alerte.niveau) === 3) couleur = "rouge";
+            else if (parseInt(alerte.niveau) === 2) couleur = "orange";
             else couleur = "bleu";
 
             liste.innerHTML += `

@@ -25,7 +25,7 @@ fetch(URL_BACKEND + "/api/dashboard", { headers: { "ngrok-skip-browser-warning":
 
         // Nombre de parcelles à risque (alertes niveau >= 2)
         const parcellesRisque = new Set(
-            data.alertes.filter(a => a.niveau >= 2).map(a => a.parcelle_id)
+            data.alertes.filter(a => parseInt(a.niveau) >= 2).map(a => a.parcelle_id)
         );
         document.getElementById("nb-risque").textContent = parcellesRisque.size;
 
@@ -38,9 +38,9 @@ fetch(URL_BACKEND + "/api/dashboard", { headers: { "ngrok-skip-browser-warning":
 
             // Choisir la couleur selon le niveau
             let couleur;
-            if (alerte.niveau === 3) {
+            if (parseInt(alerte.niveau) === 3) {
                 couleur = "rouge";
-            } else if (alerte.niveau === 2) {
+            } else if (parseInt(alerte.niveau) === 2) {
                 couleur = "orange";
             } else {
                 couleur = "bleu";
