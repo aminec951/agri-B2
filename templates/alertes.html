@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Système d'alertes agricoles - détection automatique des risques pour vos cultures">
+  <meta name="keywords" content="alertes, risques, maladies, cultures, agriculture, météo">
+  <meta name="author" content="Amine, Hamza, Mohammed, Melinna">
+  <title>AgriB2 - Alertes</title>
+  <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+
+    <aside class="sidebar">
+        <div class="logo">🌱 AgriB2</div>
+        <ul class="menu">
+            <li><a href="/">Dashboard</a></li>
+            <li><a href="/parcelles">Parcelles</a></li>
+            <li><a href="/observations">Observations</a></li>
+            <li class="actif"><a href="/alertes">Alertes</a></li>
+        </ul>
+    </aside>
+
+
+    <main class="contenu">
+
+        <h1>Alertes</h1>
+
+
+        <div class="kpi-alertes">
+            <div class="kpi-alerte rouge">
+                <div class="label">Niveau 3 - Critique</div>
+                <div class="chiffre" id="nb-niveau-3">--</div>
+                <div class="info">Action urgente</div>
+            </div>
+            <div class="kpi-alerte orange">
+                <div class="label">Niveau 2 - Important</div>
+                <div class="chiffre" id="nb-niveau-2">--</div>
+                <div class="info">À surveiller</div>
+            </div>
+            <div class="kpi-alerte bleu">
+                <div class="label">Niveau 1 - Info</div>
+                <div class="chiffre" id="nb-niveau-1">--</div>
+                <div class="info">Pour information</div>
+            </div>
+        </div>
+
+
+        <div class="alertes-bloc">
+            <h2>Toutes les alertes</h2>
+            <div id="liste-alertes">
+                
+            </div>
+        </div>
+
+    </main>
+
+    <script src="/static/js/alertes.js"></script>
+
+</body>
+</html>

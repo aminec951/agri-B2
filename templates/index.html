@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Tableau de bord de suivi agricole - visualisez vos parcelles, cultures et alertes en temps réel">
+  <meta name="keywords" content="agriculture, parcelles, cultures, alertes, suivi, météo">
+  <meta name="author" content="Amine, Hamza, Mohammed, Melinna">
+  <title>AgriB2 - Tableau de bord</title>
+<link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+
+    <aside class="sidebar">
+        <div class="logo">🌱 AgriB2</div>
+        <ul class="menu">
+            <li class="actif"><a href="/">Dashboard</a></li>
+            <li><a href="/parcelles">Parcelles</a></li>
+            <li><a href="/observations">Observations</a></li>
+            <li><a href="/alertes">Alertes</a></li>
+        </ul>
+    </aside>
+
+
+    <main class="contenu">
+
+        <h1>Tableau de bord</h1>
+
+        <div class="bento">
+
+            <div class="boite grande">
+                <span class="label">Parcelles</span>
+                <div>
+                    <div class="chiffre" id="nb-parcelles">--</div>
+                    <p class="info">Sur 5 zones différentes</p>
+                </div>
+            </div>
+
+            <div class="boite lime">
+                <span class="label">Météo</span>
+                <div class="chiffre" id="meteo-temp">--°</div>
+                <span class="info" id="meteo-detail">Chargement...</span>
+            </div>
+
+            <div class="boite orange">
+                <span class="label">Alertes</span>
+                <div class="chiffre" id="nb-alertes">--</div>
+                <span class="info">À surveiller</span>
+            </div>
+
+            <div class="boite">
+                <span class="label">Observations</span>
+                <div class="chiffre" id="nb-observations">--</div>
+                <span class="info">Cette semaine</span>
+            </div>
+
+            <div class="boite">
+                <span class="label">Risque</span>
+                <div class="chiffre" id="nb-risque">--</div>
+                <span class="info">Action requise</span>
+            </div>
+
+        </div>
+
+
+        <div class="alertes-bloc">
+            <h2>Dernières alertes</h2>
+            <div id="liste-alertes">
+                <!--  alerte JS -->
+            </div>
+        </div>
+
+    </main>
+
+    <script src="/static/js/dashboard.js"></script>
+
+</body>
+</html>

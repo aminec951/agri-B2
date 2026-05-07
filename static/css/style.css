@@ -1,0 +1,527 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #0F1410;
+    color: #E8E5DD;
+    display: flex;
+    min-height: 100vh;
+    padding: 20px;
+    gap: 20px;
+}
+
+
+
+.sidebar {
+    width: 180px;
+    background-color: #1A211D;
+    border-radius: 16px;
+    padding: 20px;
+}
+
+.logo {
+    font-size: 18px;
+    font-weight: bold;
+    color: #C5F558;
+    margin-bottom: 30px;
+}
+
+.menu {
+    list-style: none;
+}
+
+.menu li {
+    padding: 10px 12px;
+    margin-bottom: 5px;
+    border-radius: 8px;
+    color: #888;
+    cursor: pointer;
+}
+
+.menu li.actif {
+    background-color: #C5F558;
+    color: #0F1410;
+    font-weight: bold;
+}
+
+.menu li a {
+    color: inherit;
+    text-decoration: none;
+    display: block;
+}
+
+
+
+.contenu {
+    flex: 1;
+}
+
+h1 {
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+
+
+.bento {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.boite {
+    background-color: #1A211D;
+    border-radius: 16px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 130px;
+}
+
+.grande {
+    grid-row: span 2;
+}
+
+.lime {
+    background-color: #C5F558;
+    color: #0F1410;
+}
+
+.orange {
+    background-color: #F5A65B;
+    color: #ffffff;
+}
+
+.label {
+    font-size: 12px;
+    text-transform: uppercase;
+    opacity: 0.6;
+}
+
+.chiffre {
+    font-size: 50px;
+    font-weight: bold;
+    line-height: 1;
+}
+
+.grande .chiffre {
+    font-size: 80px;
+}
+
+.info {
+    font-size: 13px;
+    opacity: 0.7;
+}
+
+
+.alertes-bloc {
+    background-color: #1A211D;
+    border-radius: 16px;
+    padding: 20px;
+}
+
+.alertes-bloc h2 {
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+.alerte {
+    padding: 12px;
+    border-radius: 8px;
+    margin-bottom: 8px;
+    font-size: 14px;
+}
+
+.alerte.rouge {
+    background-color: #2D1414;
+    border-left: 3px solid #E04545;
+}
+
+.alerte.orange {
+    background-color: #2D2014;
+    border-left: 3px solid #F5A65B;
+}
+
+.alerte.bleu {
+    background-color: #14222D;
+    border-left: 3px solid #5BAFF5;
+}
+
+
+/* ============================================
+   RESPONSIVE - Mobile (max 768px)
+   ============================================ */
+@media (max-width: 768px) {
+
+    body {
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    .sidebar {
+        width: 100%;
+    }
+
+    .menu {
+        display: flex;
+        gap: 5px;
+        flex-wrap: wrap;
+    }
+
+    .bento {
+        grid-template-columns: 1fr;
+    }
+
+    .grande {
+        grid-row: span 1;
+    }
+
+    .grande .chiffre {
+        font-size: 50px;
+    }
+}
+
+/* ============================================
+   PAGE Observations
+   ============================================ */
+
+/* --- GRILLE 2 COLONNES OBSERVATIONS --- */
+.grille {
+    display: grid;
+    grid-template-columns: 1fr 1.4fr;
+    gap: 15px;
+}
+
+.carte {
+    background-color: #1A211D;
+    border-radius: 16px;
+    padding: 20px;
+}
+
+/* --- FORMULAIRE --- */
+.champ {
+    margin-bottom: 14px;
+}
+
+.champ label {
+    display: block;
+    font-size: 12px;
+    text-transform: uppercase;
+    color: #888;
+    margin-bottom: 6px;
+}
+
+.champ select,
+.champ input,
+.champ textarea {
+    width: 100%;
+    background-color: #0F1410;
+    border: 1px solid #2A3A30;
+    border-radius: 8px;
+    padding: 10px 12px;
+    color: #E8E5DD;
+    font-size: 14px;
+    font-family: Arial, sans-serif;
+    outline: none;
+}
+
+.champ textarea {
+    height: 80px;
+    resize: none;
+}
+
+/* --- BOUTONS ETAT --- */
+.etats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6px;
+}
+
+.btn-etat {
+    background-color: #0F1410;
+    border: 1px solid #2A3A30;
+    border-radius: 8px;
+    padding: 8px;
+    color: #888;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.btn-etat.actif {
+    background-color: #1E3A10;
+    border-color: #C5F558;
+    color: #C5F558;
+    font-weight: bold;
+}
+
+/* --- BOUTON ENVOYER --- */
+.btn-envoyer {
+    width: 100%;
+    background-color: #C5F558;
+    color: #0F1410;
+    border: none;
+    border-radius: 8px;
+    padding: 12px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 6px;
+}
+
+/* --- MESSAGE SUCCES --- */
+.msg-succes {
+    display: none;
+    background-color: #1E3A10;
+    border: 1px solid #C5F558;
+    border-radius: 8px;
+    padding: 10px;
+    text-align: center;
+    color: #C5F558;
+    font-size: 13px;
+    margin-top: 10px;
+}
+
+/* --- HISTORIQUE --- */
+.historique-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.filtre {
+    background-color: #0F1410;
+    border: 1px solid #2A3A30;
+    border-radius: 8px;
+    padding: 6px 10px;
+    color: #E8E5DD;
+    font-size: 12px;
+    outline: none;
+}
+
+/* --- UNE OBSERVATION --- */
+.obs {
+    display: flex;
+    gap: 12px;
+    padding-bottom: 14px;
+    border-bottom: 1px solid #1E2820;
+    margin-bottom: 14px;
+}
+
+.obs:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+.point {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    margin-top: 5px;
+    flex-shrink: 0;
+}
+
+.point-vert   { background-color: #C5F558; }
+.point-orange { background-color: #F5A65B; }
+.point-rouge  { background-color: #E04545; }
+.point-bleu   { background-color: #5BAFF5; }
+
+.obs-info { flex: 1; }
+
+.obs-ligne1 {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 3px;
+}
+
+.obs-etat { font-size: 13px; font-weight: bold; }
+.obs-date { font-size: 11px; color: #888; }
+.obs-parcelle { font-size: 12px; color: #C5F558; margin-bottom: 3px; }
+.obs-commentaire { font-size: 12px; color: #888; }
+
+/* --- RESPONSIVE --- */
+@media (max-width: 768px) {
+    .grille { grid-template-columns: 1fr; }
+}
+
+
+
+/* =============
+   PAGE PARCELLES 
+   ============= */
+
+/* Header avec titre + bouton */
+.header-page {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.btn-ajouter {
+    background-color: #C5F558;
+    color: #0F1410;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 10px;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+
+/* Filtres en pastilles */
+.filtres {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.filtre {
+    background-color: #1A211D;
+    color: #888;
+    padding: 8px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    cursor: pointer;
+    border: 1px solid #2A332D;
+}
+
+.filtre.actif {
+    background-color: #C5F558;
+    color: #0F1410;
+    border-color: #C5F558;
+}
+
+
+/* Grille de cartes parcelles */
+.grille-parcelles {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+
+.carte {
+    background-color: #1A211D;
+    border-radius: 16px;
+    padding: 18px;
+    border-left: 4px solid #C5F558;
+}
+
+.carte.risque { border-left-color: #F5A65B; }
+.carte.maladie { border-left-color: #E04545; }
+
+
+.carte-haut {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 15px;
+}
+
+.carte-nom {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.carte-zone {
+    font-size: 12px;
+    color: #888;
+    margin-top: 2px;
+}
+
+
+/* Badge statut */
+.badge {
+    font-size: 11px;
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-weight: bold;
+}
+
+.badge.ok {
+    background-color: #C5F558;
+    color: #0F1410;
+}
+
+.badge.risque {
+    background-color: #F5A65B;
+    color: #ffffff;
+}
+
+.badge.maladie {
+    background-color: #E04545;
+    color: white;
+}
+
+
+/* Infos en bas de carte */
+.carte-infos {
+    display: flex;
+    justify-content: space-between;
+    font-size: 13px;
+    color: #888;
+    padding-top: 12px;
+    border-top: 1px solid #2A332D;
+}
+
+.carte-infos strong {
+    color: #E8E5DD;
+    display: block;
+}
+
+
+/* Responsive parcelles */
+@media (max-width: 768px) {
+    .grille-parcelles {
+        grid-template-columns: 1fr;
+    }
+}     
+
+
+/* =============
+   PAGE ALERTES 
+   =============*/
+
+/* 3 KPI par niveau */
+.kpi-alertes {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.kpi-alerte {
+    background-color: #1A211D;
+    border-radius: 16px;
+    padding: 20px;
+    border-left: 4px solid #C5F558;
+}
+
+.kpi-alerte.rouge { border-left-color: #E04545; }
+.kpi-alerte.orange { border-left-color: #F5A65B; }
+.kpi-alerte.bleu { border-left-color: #5BAFF5; }
+
+
+/* Date à droite dans la liste d'alertes */
+.alerte-date {
+    float: right;
+    font-size: 12px;
+    opacity: 0.7;
+}
+
+
+/* Responsive alertes */
+@media (max-width: 768px) {
+    .kpi-alertes {
+        grid-template-columns: 1fr;
+    }
+}
