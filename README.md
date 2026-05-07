@@ -55,7 +55,19 @@ Données importées : 10 parcelles, 10 cultures, 60 météo, 100 observations, 5
 - HTTP : http://192.168.223.130
 - HTTPS : https://192.168.223.130
 - API : http://192.168.223.130/api/parcelles
+## 🌐 Accès public à l'API
 
+L'API est accessible publiquement via Ngrok :
+**https://mortuary-eating-polyester.ngrok-free.dev**
+
+Endpoints :
+- `/api/parcelles` - Liste des parcelles
+- `/api/meteo` - Données météo
+- `/api/alertes` - Alertes générées
+- `/api/observations` - Observations terrain
+- `/api/dashboard` - Tableau de bord
+
+⚠️ URL Ngrok temporaire (peut changer après redémarrage du tunnel).
 ## 👥 Équipe
 
 - **Mohammed** : Backend Flask
