@@ -1,8 +1,8 @@
 
-const URL_BACKEND = "http://10.105.2.47:5000";
+const URL_BACKEND = "https://mortuary-eating-polyester.ngrok-free.dev";
 
 
-fetch(URL_BACKEND + "/api/parcelles")
+fetch(URL_BACKEND + "/api/parcelles", { headers: { "ngrok-skip-browser-warning": "true" } })
     .then(reponse => reponse.json())
     .then(parcelles => {
 

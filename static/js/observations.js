@@ -1,4 +1,4 @@
-var serveur = "http://10.105.2.47:5000"
+var serveur = "https://mortuary-eating-polyester.ngrok-free.dev"
 var etatChoisi = "Normal"
 var toutesLesObservations = []
 
@@ -8,7 +8,7 @@ chargerParcelles()
 chargerObservations()
 
 function chargerParcelles() {
-    fetch(serveur + "/api/parcelles")
+    fetch(serveur + "/api/parcelles", { headers: { "ngrok-skip-browser-warning": "true" } })
     .then(function(reponse) { return reponse.json() })
     .then(function(parcelles) {
         var menuFormulaire = document.getElementById("champ-parcelle")
@@ -22,7 +22,7 @@ function chargerParcelles() {
 }
 
 function chargerObservations() {
-    fetch(serveur + "/api/observations")
+    fetch(serveur + "/api/observations", { headers: { "ngrok-skip-browser-warning": "true" } })
     .then(function(reponse) { return reponse.json() })
     .then(function(observations) {
         toutesLesObservations = observations
@@ -100,7 +100,7 @@ function envoyerObservation() {
     }
     fetch(serveur + "/api/observations", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers: { "Content-Type": "application/json", "ngrok-skip-browser-warning": "true" },
         body: JSON.stringify(donnees)
     })
     .then(function(reponse) { return reponse.json() })

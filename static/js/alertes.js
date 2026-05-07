@@ -1,10 +1,10 @@
-const URL_BACKEND = "http://10.105.2.47:5000";
+const URL_BACKEND = "https://mortuary-eating-polyester.ngrok-free.dev";
 
 
 // =============================
 // RÉCUPÉRER TOUTES LES ALERTES
 // ============================
-fetch(URL_BACKEND + "/api/alertes")
+fetch(URL_BACKEND + "/api/alertes", { headers: { "ngrok-skip-browser-warning": "true" } })
     .then(r => r.json())
     .then(alertes => {
 

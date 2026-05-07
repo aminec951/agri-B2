@@ -1,11 +1,11 @@
 
 // L'adresse du backend de Moha (sur le réseau Wi-Fi)
-const URL_BACKEND = "http://10.105.2.47:5000";
+const URL_BACKEND = "https://mortuary-eating-polyester.ngrok-free.dev";
 
 
 // 1) RÉCUPÉRER TOUTES LES DONNÉES DU DASHBOARD
 
-fetch(URL_BACKEND + "/api/dashboard")
+fetch(URL_BACKEND + "/api/dashboard", { headers: { "ngrok-skip-browser-warning": "true" } })
     .then(reponse => reponse.json())
     .then(data => {
 
@@ -58,7 +58,7 @@ fetch(URL_BACKEND + "/api/dashboard")
 
 
 // 3) NOMBRE DE PARCELLES À RISQUE
-fetch(URL_BACKEND + "/api/parcelles")
+fetch(URL_BACKEND + "/api/parcelles", { headers: { "ngrok-skip-browser-warning": "true" } })
     .then(reponse => reponse.json())
     .then(parcelles => {
 
